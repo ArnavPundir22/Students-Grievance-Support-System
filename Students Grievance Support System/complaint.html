@@ -6,47 +6,97 @@
     <title>Submit Complaint - Students Grievance Support System</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .form-container {
-            display: flex;
-            flex-direction: column;
-        }
-        select, textarea, button {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
+       /* Apply a light natural gradient with smooth animation */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #e0f7fa, #f9fbe7, #ffecf0, #e8f5e9);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Keyframe for smooth background gradient animation */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main container styling */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Fade-in animation for the form container */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Heading styles */
+h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #3d5a5a;
+}
+
+/* Form styling */
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields and dropdowns */
+select, textarea, button {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus styling for inputs and dropdowns */
+select:focus, textarea:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+}
+
+/* Button styling */
+button {
+    background-color: #64b5f6;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover and active states */
+button:hover {
+    background-color: #42a5f5;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
     </style>
 </head>
 <body>

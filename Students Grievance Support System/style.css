@@ -1,57 +1,126 @@
-/* styles.css */
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    color: #333333;
+    background: linear-gradient(120deg, #f9f6f2, #b2d8b5, #87bba2, #f0d9b5);
+    background-size: 200% 200%;
+    animation: animatedBackground 8s infinite alternate;
 }
 
+/* Background Animation */
+@keyframes animatedBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Container */
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 380px;
     text-align: center;
 }
 
+/* Headings */
 h1 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #6a994e, #a2d2ff, #ffb4a2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2deded; /* Earthy green */
+}
+
+/* Form Styling */
 .form-container {
     display: flex;
     flex-direction: column;
 }
 
 input, select, textarea, button {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 12px 0;
+    padding: 12px;
     width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.05); /* Subtle neutral background for inputs */
+    color: #333333;
 }
 
+/* Input Focus */
+input:focus, select:focus, textarea:focus {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(106, 153, 78, 0.5);
+    border: 1px solid #6a994e;
+}
+
+/* Button Styling */
 button {
-    background-color: #28a745;
+    background-color: #6a994e;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(106, 153, 78, 0.3);
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #558b2f;
+    box-shadow: 0 6px 20px rgba(85, 139, 47, 0.5);
+    transform: scale(1.05);
 }
 
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Links */
 a {
-    color: #007bff;
+    color: #6a994e;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #558b2f;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
 }

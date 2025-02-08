@@ -5,51 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Students Grievance Support System</title>
     <style>
+        /* Body with animated natural background */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(120deg, #e0f7fa, #e8f5e9, #fff3e0, #ede7f6);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Container styles */
         .container {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
             text-align: center;
+            animation: fadeIn 1.5s ease;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         h1 {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 20px;
+            color: #333;
         }
+
         .form-container {
             display: flex;
             flex-direction: column;
         }
+
         input, select, button {
-            margin: 10px 0;
-            padding: 10px;
+            margin: 12px 0;
+            padding: 12px;
             width: 100%;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: box-shadow 0.3s, border-color 0.3s;
         }
+
+        input:focus, select:focus {
+            border-color: #0288d1;
+            box-shadow: 0 0 8px rgba(2, 136, 209, 0.3);
+        }
+
         button {
-            background-color: #28a745;
+            background-color: #4caf50;
             color: white;
-            border: none;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
         }
+
         button:hover {
-            background-color: #218838;
+            background-color: #388e3c;
         }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
         a {
             color: #007bff;
             text-decoration: none;
+            font-weight: bold;
         }
+
         a:hover {
             text-decoration: underline;
         }
