@@ -26,7 +26,8 @@ function loginUser() {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (storedUser && storedUser.email === email && storedUser.password === password) {
         alert("Login successful!");
-        window.location.href = "dashboard.html";
+        window.location.href = "complaint.html";
+
     } else {
         alert("Invalid credentials!");
     }
@@ -34,19 +35,29 @@ function loginUser() {
 
 // Submit Complaint
 function submitComplaint() {
-    const category = document.getElementById("complaint-category").value;
-    const subcategory = document.getElementById("complaint-subcategory").value;
-    const description = document.getElementById("complaint-description").value;
+    const category = document.getElementById("complaint-category");
+    const subcategory = document.getElementById("complaint-subcategory");
+    const description = document.getElementById("complaint-description");
     
-    if (!category || !subcategory || !description) {
+    if (!category.value || !subcategory.value || !description.value) {
         alert("Please fill in all fields");
         return;
     }
-    
-    const complaint = { category, subcategory, description };
+
+    const complaint = { 
+        category: category.value, 
+        subcategory: subcategory.value, 
+        description: description.value 
+    };
+
     let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
     complaints.push(complaint);
-    localStorage.setItem("complaints", JSON.stringify(complaints));
-    
+    localStorage.setItem("complaints", JSON.stringify(complaints));   
+
     alert("Complaint submitted successfully!");
+
+    // Clear form fields after submission
+    category.value = "";
+    subcategory.value = "";
+    description.value = "";
 }

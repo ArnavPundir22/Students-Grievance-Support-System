@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Complaint - Students Grievance Support System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+        select, textarea, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit a Complaint</h1>
+        <div class="form-container">
+            <select id="complaint-category">
+                <option value="department">Department Level</option>
+                <option value="college">Institute/College Level</option>
+                <option value="university">University Level</option>
+            </select>
+            <select id="complaint-subcategory">
+                <option value="admission">Admission</option>
+                <option value="finance">Finance</option>
+                <option value="examination">Examination</option>
+                <option value="timetable">Lecture Timetable/Learning</option>
+                <option value="reevaluation">Paper Re-Evaluation</option>
+            </select>
+            <textarea id="complaint-description" placeholder="Describe your complaint..." rows="4"></textarea>
+            <button onclick="submitComplaint()">Submit Complaint</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
