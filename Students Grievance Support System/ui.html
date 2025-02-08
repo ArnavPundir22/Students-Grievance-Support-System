@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Grievance Support System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Students Grievance Support System</h1>
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account? <a href="login.html" onclick="showRegister()">Register here</a></p>
+        </div>
+        <div class="form-container" id="register-form" style="display:none;">
+            <h2>Register</h2>
+            <input type="text" id="register-name" placeholder="Name" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <select id="register-role">
+                <option value="student">Student</option>
+                <option value="committee">Committee Member</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button onclick="registerUser()">Register</button>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+        </div>
+        <div class="form-container" id="complaint-form" style="display:none;">
+            <h2>Submit Complaint</h2>
+            <select id="complaint-category">
+                <option value="Department Level">Department Level</option>
+                <option value="Institute/College Level">Institute/College Level</option>
+                <option value="University Level">University Level</option>
+            </select>
+            <input type="text" id="complaint-subcategory" placeholder="Sub Category" required>
+            <textarea id="complaint-description" placeholder="Describe your complaint" required></textarea>
+            <button onclick="submitComplaint()">Submit</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
